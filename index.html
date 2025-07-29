@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Invite Our Discord Bot</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #2c2f33;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .banner-container {
+      width: 100%;
+      height: 300px;
+      background: url('cfafc2_solid_color_background_icolorpalette.png') center/cover no-repeat;
+      position: relative;
+    }
+
+    .banner-container::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(to bottom, rgba(44,47,51,0.2), rgba(44,47,51,1));
+    }
+
+    .logo-wrapper {
+      position: absolute;
+      bottom: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      background: white;
+      border-radius: 50%;
+      padding: 6px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .logo {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .menu {
+      margin-top: 120px;
+      text-align: center;
+    }
+
+    .menu h1 {
+      font-size: 2.4rem;
+      margin-bottom: 15px;
+    }
+
+    .menu-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      background-color: #5865f2;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #4752c4;
+      transform: scale(1.05);
+    }
+
+    .section {
+      display: none;
+      margin-top: 40px;
+      text-align: center;
+      padding: 0 20px;
+      max-width: 700px;
+    }
+
+    .section.active {
+      display: block;
+    }
+
+    .team-buttons {
+      margin-top: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    @media (max-width: 600px) {
+      .logo-wrapper { bottom: -60px; padding: 4px; }
+      .logo { width: 120px; height: 120px; }
+      .menu h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Banner -->
+  <div class="banner-container">
+    <div class="logo-wrapper">
+      <img class="logo" src="file_00000000673061f5858f686f8b694d0e.png" alt="Bot Logo">
+    </div>
+  </div>
+
+  <!-- Menu Section -->
+  <div class="menu">
+    <h1>Invite Our Discord Bot</h1>
+    <div class="menu-buttons">
+      <button class="btn" onclick="showSection('invite')">➕ Invite Bot</button>
+      <button class="btn" onclick="showSection('server')">💬 Join Server</button>
+      <button class="btn" onclick="showSection('team')">👥 Team</button>
+    </div>
+  </div>
+
+  <!-- Sections -->
+  <div id="invite" class="section active">
+    <h2>Invite the Bot</h2>
+    <p>Click below to add our Discord bot to your server!</p>
+    <div class="team-buttons">
+      <a class="btn" href="https://discord.com/oauth2/authorize?client_id=1396104148356960339" target="_blank">Add Bot</a>
+    </div>
+  </div>
+
+  <div id="server" class="section">
+    <h2>Join Our Support Server</h2>
+    <p>Need help or want updates? Join our Discord server!</p>
+    <div class="team-buttons">
+      <a class="btn" href="https://discord.gg/jx4wYkGFuy" target="_blank">Join Server</a>
+    </div>
+  </div>
+
+  <div id="team" class="section">
+    <h2>Meet the Team</h2>
+    <p>The awesome people behind this bot:</p>
+    <div class="team-buttons">
+      <a class="btn" target="_blank">👤 👑Owner Bullkeystare</a>
+      <a class="btn" target="_blank">👑 Co Owner armaansidhu223</a>
+    </div>
+  </div>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(sec => {
+        sec.classList.remove('active');
+      });
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
